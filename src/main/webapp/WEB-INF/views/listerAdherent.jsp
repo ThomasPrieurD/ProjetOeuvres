@@ -5,10 +5,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<jsp:include page="header.jsp" />
 <title>Affichage de tous les adhérents</title>
 </head>
 <body>
+<jsp:include page="navBar.jsp" />
+
 	<P>
 		<A href="index.htm"><FONT face="Arial" color="#004080">Retour
 				Accueil</FONT></A>
@@ -37,5 +39,8 @@
 			</tr>
 		</c:forEach>
 	</TABLE>
+
+<jsp:include page="footer.jsp" />
+
 </body>
 </html>

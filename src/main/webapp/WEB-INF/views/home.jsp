@@ -4,9 +4,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<%--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="refresh" content="0;URL=javascript:fermer();">
-<title>Expo : Médiathèque De POLYTECH</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>--%>
+    <jsp:include page="header.jsp" />
+    <title>Expo : Médiathèque De POLYTECH</title>
+
 </head>
 
 
@@ -17,25 +21,32 @@
 </script>
 
 <body>
-	<p align="center"></p>
-	<p align="center">
-		<font face="Arial" size="4"><u>Médiathèque de POLYTECH </u></font>
-	</p>
-	<p align="center">
-		<font color="#004080" face="Arial" size="4">Gestion de
-			l'exposition 2016</font>
-	</p>
+
+<jsp:include page="navBar.jsp" />
+
+
+<div class="container">
+
+    <h1 class="text-center"><span style="text-decoration: underline;">Médiathèque de POLYTECH</span></h1>
+    <h2 class="text-center">Gestion de
+        l'exposition 2016</h2>
+
+    <div class ="jumbotron">
 	<p align="left">
 		<font color="#004080" face="Arial"><u>Sélectionnez la
 				fonctionnalité voulue:</u></font>
 	</p>
 	<ul>
-		<li><a href="ajouterAdherent.htm"><font
+		<li><a href="ajouterAdherent"><font
 				face="Arial">Ajout Adhérent</font></a></li>
-		<li><a href="listerAdherent.htm"><font
+		<li><a href="listerAdherent"><font
 				face="Arial">lister les adhérents</font></a><font face="Arial"> </font></li>
 		<li><a href="javascript:fermer()"><font face="Arial">Quitter</font></a><font
 			face="Arial"> </font></li>
 	</ul>
+    </div>
+</div>
+
+<jsp:include page="footer.jsp" />
 </body>
 </html>

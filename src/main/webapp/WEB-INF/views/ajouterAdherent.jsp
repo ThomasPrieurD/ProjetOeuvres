@@ -3,17 +3,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Ajouter un  adhérent</title>
+    <jsp:include page="header.jsp" />
+
+    <title>Ajouter un  adhérent</title>
+
 </head>
 <SCRIPT language="Javascript" type="text/javascript">
 <script type="text/javascript" src="js/foncControle.js"></script>
 
 
 <body>
-	<H1> Ajout d'un adhérent </H1> 
+<jsp:include page="navBar.jsp" />
 
-<DIV align="center">
+	<H1> Ajout d'un adhérent </H1>
+
+
+
+    <DIV align="center">
 <FORM  name='identification' method="post" action="insererAdherent.htm" onsubmit="return teste()">
      <P align="left"><FONT face="Arial" color="#004080"></FONT>     
 		<FONT face="Arial" color="#004080"> <BR>&nbsp;  &nbsp;  &nbsp; Nom de l'adherent : </FONT>
@@ -35,5 +41,8 @@
 </P></FORM>
 </DIV>
 <BR>
+
+<jsp:include page="footer.jsp" />
+
 </body>
 </html>
