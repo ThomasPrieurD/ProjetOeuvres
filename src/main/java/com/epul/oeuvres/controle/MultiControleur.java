@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -41,7 +42,7 @@ public class MultiControleur {
 
 //	private static final Logger logger = LoggerFactory.getLogger(MultiControleur.class);
 
-	@RequestMapping(value = "listerAdherent.htm")
+	@RequestMapping(value = "listerAdherent")
 	public ModelAndView afficherLesStages(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String destinationPage;
 		try {
@@ -57,7 +58,7 @@ public class MultiControleur {
 		return new ModelAndView(destinationPage);
 	}
 
-	@RequestMapping(value = "insererAdherent.htm")
+	@RequestMapping(value = "insererAdherent")
 	public ModelAndView insererAdherent(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		String destinationPage = "";
@@ -68,15 +69,15 @@ public class MultiControleur {
 			unAdherent.setVilleAdherent(request.getParameter("txtville"));
 			Service unService = new Service();
 			unService.insertAdherent(unAdherent);
+			destinationPage = "home";
 		} catch (Exception e) {
 			request.setAttribute("MesErreurs", e.getMessage());
 			destinationPage = "Erreur";
 		}
-		destinationPage = "home";
 		return new ModelAndView(destinationPage);
 	}
 
-	@RequestMapping(value = "ajouterAdherent.htm")
+	@RequestMapping(value = "ajouterAdherent")
 	public ModelAndView ajouterAdherent(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		String destinationPage = "";
@@ -84,16 +85,32 @@ public class MultiControleur {
 			destinationPage = "ajouterAdherent";
 		} catch (Exception e) {
 			request.setAttribute("MesErreurs", e.getMessage());
-			destinationPage = "rreur";
+			destinationPage = "Erreur";
 		}
 
 		return new ModelAndView(destinationPage);
 	}
 
+	/*@RequestMapping(value = "supprimerAdherent_{idAdherent}")
+	public ModelAndView supprimerAdherent(HttpServletRequest request, HttpServletResponse response, @PathVariable("idAdherent") int idAdherent) throws Exception {
+
+		String destinationPage = "";
+		try {
+			Service unService = new Service();
+			unService.deleteAdherent(idAdherent);
+			destinationPage = "home";
+		} catch (Exception e) {
+			request.setAttribute("MesErreurs", e.getMessage());
+			destinationPage = "Erreur";
+		}
+
+		return new ModelAndView(destinationPage);
+	}*/
+
 	// /
 	// / Affichage de la page d'accueil
 	// /
-	@RequestMapping(value = "index.htm", method = RequestMethod.GET)
+	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public ModelAndView Afficheindex(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return new ModelAndView("home");
 	}
@@ -108,7 +125,7 @@ public class MultiControleur {
 	// /
 	// / Affichage de la page d'accueil
 	// /
-	@RequestMapping(value = "erreur.htm", method = RequestMethod.GET)
+	@RequestMapping(value = "erreur", method = RequestMethod.GET)
 	public ModelAndView AfficheErreur(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return new ModelAndView("Erreur");
 	}
