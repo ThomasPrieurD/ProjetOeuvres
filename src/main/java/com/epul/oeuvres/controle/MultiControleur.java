@@ -58,17 +58,24 @@ public class MultiControleur {
 		return new ModelAndView(destinationPage);
 	}
 
-	@RequestMapping(value = "insererAdherent")
-	public ModelAndView insererAdherent(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value = "insererAdherent_{idAdherent}")
+	public ModelAndView insererAdherent(HttpServletRequest request, HttpServletResponse response, @PathVariable("idAdherent") int idAdherent) throws Exception {
 
 		String destinationPage = "";
 		try {
-			Adherent unAdherent = new Adherent();
-			unAdherent.setNomAdherent(request.getParameter("txtnom"));
-			unAdherent.setPrenomAdherent(request.getParameter("txtprenom"));
-			unAdherent.setVilleAdherent(request.getParameter("txtville"));
 			Service unService = new Service();
-			unService.insertAdherent(unAdherent);
+
+			if(idAdherent == 0){
+				Adherent unAdherent = new Adherent();
+				unAdherent.setNomAdherent(request.getParameter("txtnom"));
+				unAdherent.setPrenomAdherent(request.getParameter("txtprenom"));
+				unAdherent.setVilleAdherent(request.getParameter("txtville"));
+				unService.insertAdherent(unAdherent);
+			} else {
+				unService.editAdherent(idAdherent,request.getParameter("txtnom"),
+						request.getParameter("txtprenom"),
+						request.getParameter("txtville"));
+			}
 			destinationPage = "home";
 		} catch (Exception e) {
 			request.setAttribute("MesErreurs", e.getMessage());
@@ -82,6 +89,22 @@ public class MultiControleur {
 
 		String destinationPage = "";
 		try {
+			destinationPage = "ajouterAdherent";
+		} catch (Exception e) {
+			request.setAttribute("MesErreurs", e.getMessage());
+			destinationPage = "Erreur";
+		}
+
+		return new ModelAndView(destinationPage);
+	}
+
+	@RequestMapping(value = "editerAdherent_{idAdherent}")
+	public ModelAndView editerAdherent(HttpServletRequest request, HttpServletResponse response, @PathVariable("idAdherent") int idAdherent) throws Exception {
+
+		String destinationPage = "";
+		try {
+			Service unService = new Service();
+			request.setAttribute("monAdherent", unService.consulterAdherent(idAdherent));
 			destinationPage = "ajouterAdherent";
 		} catch (Exception e) {
 			request.setAttribute("MesErreurs", e.getMessage());
