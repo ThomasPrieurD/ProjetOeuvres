@@ -11,17 +11,11 @@
 <body>
 <jsp:include page="navBar.jsp" />
 
-	<P>
-		<A href="index.htm"><FONT face="Arial" color="#004080">Retour
-				Accueil</FONT></A>
-	</P>
-	<P align="center">
-		<FONT face="Arial" size="5" color="#004080"><U> <STRONG>Listing&nbsp;des
-					Adhérents </STRONG></U></FONT>
-	</P>
+<div class="container">
+	<h1 class="text-center">Liste des adhérents</h1>
 
-	<TABLE BORDER="1">
-		<CAPTION>Tableau des Adhérents</CAPTION>
+<div class="jumbotron">
+	<table class="table table-striped">
 		<TR>
 			<TH>Numero</TH>
 			<TH>Nom</TH>
@@ -29,16 +23,17 @@
 			<TH>Ville</TH>
 
 		</TR>
-
 		<c:forEach items="${mesAdherents}" var="item">
 			<tr>
 				<td>${item.idAdherent}</td>
 				<td>${item.nomAdherent}</td>
 				<td>${item.prenomAdherent}</td>
-                <td>${item.villeAdherent}</td>
+				<td>${item.villeAdherent}</td>
 			</tr>
 		</c:forEach>
-	</TABLE>
+	</table>
+</div>
+</div>
 
 <jsp:include page="footer.jsp" />
 

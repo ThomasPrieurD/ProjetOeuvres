@@ -58,31 +58,24 @@ public class MultiControleur {
 		return new ModelAndView(destinationPage);
 	}
 
-	@RequestMapping(value = "insererAdherent_{idAdherent}")
-	public ModelAndView insererAdherent(HttpServletRequest request, HttpServletResponse response, @PathVariable("idAdherent") int idAdherent) throws Exception {
+	@RequestMapping(value = "insererAdherent")
+ 	public ModelAndView insererAdherent(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		String destinationPage = "";
-		try {
-			Service unService = new Service();
-
-			if(idAdherent == 0){
-				Adherent unAdherent = new Adherent();
-				unAdherent.setNomAdherent(request.getParameter("txtnom"));
-				unAdherent.setPrenomAdherent(request.getParameter("txtprenom"));
-				unAdherent.setVilleAdherent(request.getParameter("txtville"));
-				unService.insertAdherent(unAdherent);
-			} else {
-				unService.editAdherent(idAdherent,request.getParameter("txtnom"),
-						request.getParameter("txtprenom"),
-						request.getParameter("txtville"));
+						String destinationPage;
+				try {
+						Adherent unAdherent = new Adherent();
+						unAdherent.setNomAdherent(request.getParameter("txtnom"));
+					unAdherent.setPrenomAdherent(request.getParameter("txtprenom"));
+						unAdherent.setVilleAdherent(request.getParameter("txtville"));
+						Service unService = new Service();
+						unService.insertAdherent(unAdherent);
+					} catch (Exception e) {
+						request.setAttribute("MesErreurs", e.getMessage());
+						destinationPage = "Erreur";
+					}
+				destinationPage = "home";
+				return new ModelAndView(destinationPage);
 			}
-			destinationPage = "home";
-		} catch (Exception e) {
-			request.setAttribute("MesErreurs", e.getMessage());
-			destinationPage = "Erreur";
-		}
-		return new ModelAndView(destinationPage);
-	}
 
 	@RequestMapping(value = "ajouterAdherent")
 	public ModelAndView ajouterAdherent(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -98,7 +91,7 @@ public class MultiControleur {
 		return new ModelAndView(destinationPage);
 	}
 
-	@RequestMapping(value = "editerAdherent_{idAdherent}")
+	@RequestMapping(value = "editerAdherent/{idAdherent}")
 	public ModelAndView editerAdherent(HttpServletRequest request, HttpServletResponse response, @PathVariable("idAdherent") int idAdherent) throws Exception {
 
 		String destinationPage = "";
