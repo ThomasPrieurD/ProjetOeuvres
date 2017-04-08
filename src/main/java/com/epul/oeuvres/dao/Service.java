@@ -186,7 +186,25 @@ public class Service {
 			throw new MonException(exc.getMessage(), "systeme");
 		}
 		return unProprietaire;
-	}	
+	}
+
+	public void insertOeuvre(Oeuvrevente uneOeuvre) throws MonException {
+		String mysql;
+
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "insert into oeuvrevente  (titre_oeuvrevente, prix_oeuvrevente, etat_oeuvrevente)  " + "values ('"
+					+ uneOeuvre.getTitreOeuvrevente();
+			mysql += "'" + ",'" + uneOeuvre.getPrixOeuvrevente() + "'" + ",'" + "L" + "')";
+
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+		catch (Exception exc) {
+			throw new MonException(exc.getMessage(), "systeme");
+		}
+	}
 
 	
 	

@@ -33,12 +33,18 @@
                 <%--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Link</a></li>--%>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adherent <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adherents <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="ajouterAdherent">ajouter adherent</a></li>
                         <li><a href="listerAdherent">lister adherent</a></li>
                     </ul>
                 </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Oeuvres <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ajouterOeuvre">ajouter Oeuvre</a></li>
+                        </ul>
+                    </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

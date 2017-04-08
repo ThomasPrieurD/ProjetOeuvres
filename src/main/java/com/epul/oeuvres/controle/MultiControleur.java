@@ -107,6 +107,38 @@ public class MultiControleur {
 		return new ModelAndView(destinationPage);
 	}
 
+	@RequestMapping(value = "ajouterOeuvre")
+	public ModelAndView ajouterOeuvre(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		String destinationPage;
+		try {
+			destinationPage = "ajouterOeuvre";
+		} catch (Exception e) {
+			request.setAttribute("MesErreurs", e.getMessage());
+			destinationPage = "Erreur";
+		}
+		return new ModelAndView(destinationPage);
+	}
+
+	@RequestMapping(value = "insererOeuvre")
+	public ModelAndView insererOeuvre(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		String destinationPage;
+		try {
+			Oeuvrevente uneOeuvre = new Oeuvrevente();
+			uneOeuvre.setTitreOeuvrevente(request.getParameter("titre"));
+			uneOeuvre.setPrixOeuvrevente(Integer.parseInt(request.getParameter("prix")));
+
+			Service unService = new Service();
+			unService.insertOeuvre(uneOeuvre);
+		} catch (Exception e) {
+			request.setAttribute("MesErreurs", e.getMessage());
+			destinationPage = "Erreur";
+		}
+		destinationPage = "home";
+		return new ModelAndView(destinationPage);
+	}
+
 	/*@RequestMapping(value = "supprimerAdherent_{idAdherent}")
 	public ModelAndView supprimerAdherent(HttpServletRequest request, HttpServletResponse response, @PathVariable("idAdherent") int idAdherent) throws Exception {
 
@@ -122,6 +154,8 @@ public class MultiControleur {
 
 		return new ModelAndView(destinationPage);
 	}*/
+
+
 
 	// /
 	// / Affichage de la page d'accueil
