@@ -31,19 +31,41 @@
     <h2 class="text-center">Gestion de
         l'exposition 2016</h2>
 
-    <div class ="jumbotron">
-	<p align="left">
-		<font color="#004080" face="Arial"><u>Sélectionnez la
-				fonctionnalité voulue:</u></font>
-	</p>
-	<ul>
+    <div class="jumbotron">
+	<%--<p align="left">
+		<span style="font-family: Arial;  text-decoration: underline;">Sélectionnez la
+				fonctionnalité voulue:</span>
+	</p>--%>
+        <div class="container-fluid">
+            <div class="row">
+		        <div class="col-md-6">
+                    <a href="ajouterAdherent" class="btn btn-primary btn-lg btn-block"><font
+				    face="Arial">Ajout Adhérent</font></a>
+                </div>
+		        <div class="col-md-6">
+                    <a href="listerAdherent" class="btn btn-primary btn-lg btn-block"><font
+				    face="Arial">lister les adhérents</font></a><font face="Arial"> </font>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="" class="btn btn-primary btn-lg btn-block"><font
+                        face="Arial">Editer un Adhérent</font></a>
+                </div>
+                <div class="col-md-6">
+                    <a href="" class="btn btn-primary btn-lg btn-block"><font
+                    face="Arial">Ajouter une oeuvre</font></a>
+                </div>
+            </div>
+        </div>
+		<%--<ul>
 		<li><a href="ajouterAdherent"><font
 				face="Arial">Ajout Adhérent</font></a></li>
 		<li><a href="listerAdherent"><font
 				face="Arial">lister les adhérents</font></a><font face="Arial"> </font></li>
 		<li><a href="javascript:fermer()"><font face="Arial">Quitter</font></a><font
 			face="Arial"> </font></li>
-	</ul>
+	</ul>--%>
     </div>
 </div>
 
