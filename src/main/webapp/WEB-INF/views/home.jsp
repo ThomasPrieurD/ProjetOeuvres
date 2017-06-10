@@ -40,7 +40,7 @@
             <div class="row">
 		        <div class="col-md-6">
                     <a href="ajouterAdherent" class="btn btn-primary btn-lg btn-block"><font
-				    face="Arial">Ajout Adhérent</font></a>
+				    face="Arial">Ajouter un Adhérent</font></a>
                 </div>
 		        <div class="col-md-6">
                     <a href="listerAdherent" class="btn btn-primary btn-lg btn-block"><font

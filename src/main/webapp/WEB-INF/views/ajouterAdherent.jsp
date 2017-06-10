@@ -16,31 +16,29 @@
 <jsp:include page="navBar.jsp" />
 
 
-    <DIV align="center">
 
-        <h1 class="text-center"><span style="text-decoration: underline;">Ajouter Adherent</span></h1>
-
-
-        <div class="container">
-            +<FORM  name='identification' method="post" action="insererAdherent" onsubmit="return teste()">
+<h1 class="text-center"><span style="text-decoration: underline;">Ajouter un Adhérent</span></h1>
+<div class="container">
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <FORM  name='identification' method="post" action="insererAdherent" onsubmit="return teste()">
             <div class="form-group">
                 <label for="nom">Nom de l'adherent :</label>
-                <input type="Nom" name="txtnom" class="form-control" id="nom" placeholder="Email">
+                <input type="Nom" name="txtnom" class="form-control" id="nom" placeholder="Nom">
             </div>
             <div class="form-group">
                 <label for="prenom">Prenom de l'adherent :</label>
-                <input type="Prenom" name="txtprenom" class="form-control" id="prenom" placeholder="Password">
+                <input type="Prenom" name="txtprenom" class="form-control" id="prenom" placeholder="Prénom">
             </div>
             <div class="form-group">
                 <label for="ville">Ville de l'adherent :</label>
-                <input type="Ville" name="txtville" class="form-control" id="ville" placeholder="Password">
+                <input type="Ville" name="txtville" class="form-control" id="ville" placeholder="Ville">
             </div>
-            <INPUT type="submit" name="bt"  value="Ajouter" >
+                <button type="submit" class="btn btn-default">Ajouter</button>
         </form>
         </div>
-
-</DIV>
-<BR>
+    </div>
+</div>
 
 <jsp:include page="footer.jsp" />
 
