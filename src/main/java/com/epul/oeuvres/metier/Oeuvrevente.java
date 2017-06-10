@@ -69,4 +69,8 @@ public class Oeuvrevente implements Serializable {
 	public void setProprietaire(Proprietaire proprietaire) {
 		this.proprietaire = proprietaire;
 	}
+
+	public void setProprietaire(String s) {
+		this.proprietaire=new Proprietaire(Integer.parseInt(s), s,s);
+	}
 }

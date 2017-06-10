@@ -58,6 +58,21 @@ public class MultiControleur {
 		return new ModelAndView(destinationPage);
 	}
 
+	@RequestMapping(value = "listerOeuvre")
+	public ModelAndView afficherLesOeuvres(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String destinationPage;
+		try {
+			// HttpSession session = request.getSession();
+			Service unService = new Service();
+			request.setAttribute("mesOeuvres", unService.consulterListeOeuvres());
+			destinationPage = "listerOeuvre";
+		} catch (MonException e) {
+			request.setAttribute("MesErreurs", e.getMessage());
+			destinationPage = "Erreur";
+
+		}
+		return new ModelAndView(destinationPage);
+	}
 	@RequestMapping(value = "insererAdherent")
  	public ModelAndView insererAdherent(HttpServletRequest request, HttpServletResponse response) throws Exception {
 

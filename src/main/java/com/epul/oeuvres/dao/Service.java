@@ -152,6 +152,47 @@ public class Service {
 		return uneOeuvre;
 		
 	}
+
+	public List<Oeuvrevente> consulterListeOeuvres() throws MonException {
+		String mysql = "select * from oeuvrevente";
+		return consulterListeOeuvres(mysql);
+	}
+
+	private List<Oeuvrevente> consulterListeOeuvres(String mysql) throws MonException {
+		List<Object> rs;
+		List<Oeuvrevente> mesOeuvres = new ArrayList<Oeuvrevente>();
+		int index = 0;
+		try {
+			DialogueBd unDialogueBd = DialogueBd.getInstance();
+			rs =unDialogueBd.lecture(mysql);
+			while (index < rs.size()) {
+				// On cr�e un stage
+				Oeuvrevente unO = new Oeuvrevente();
+				// il faut redecouper la liste pour retrouver les lignes
+				unO.setIdOeuvrevente(Integer.parseInt(rs.get(index).toString()));
+				unO.setTitreOeuvrevente(rs.get(index + 1).toString());
+				unO.setEtatOeuvrevente(rs.get(index + 2).toString());
+				unO.setPrixOeuvrevente(Float.parseFloat(rs.get(index + 3).toString()));
+				unO.setProprietaire("1");
+				/*unA.setIdAdherent(Integer.parseInt(rs.get(index + 0).toString()));
+				unA.setNomAdherent(rs.get(index + 1).toString());
+				unA.setPrenomAdherent(rs.get(index + 2).toString());
+				unA.setVilleAdherent(rs.get(index + 3).toString());*/
+				// On incr�mente tous les 3 champs
+				index = index + 5;
+				mesOeuvres.add(unO);
+			}
+
+			return mesOeuvres;
+		} catch (MonException e) {
+			System.out.println(e.getMessage());
+			throw e;
+		}
+		catch (Exception exc) {
+			System.out.println(exc.getMessage());
+			throw new MonException(exc.getMessage(), "systeme");
+		}
+	}
 	
 	 
 	public Proprietaire rechercherProprietaire(int  id) throws MonException

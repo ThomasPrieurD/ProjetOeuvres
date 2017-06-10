@@ -38,23 +38,28 @@
 	</p>--%>
         <div class="container-fluid">
             <div class="row">
-		        <div class="col-md-6">
+		        <div class="col-md-4">
                     <a href="ajouterAdherent" class="btn btn-primary btn-lg btn-block"><font
 				    face="Arial">Ajouter un Adhérent</font></a>
                 </div>
-		        <div class="col-md-6">
+		        <div class="col-md-4">
                     <a href="listerAdherent" class="btn btn-primary btn-lg btn-block"><font
 				    face="Arial">lister les adhérents</font></a><font face="Arial"> </font>
                 </div>
+                <div class="col-md-4">
+                    <a href="" class="btn btn-primary btn-lg btn-block"><font
+                            face="Arial">Editer un Adhérent</font></a>
+                </div>
             </div>
             <div class="row">
+
                 <div class="col-md-6">
-                    <a href="" class="btn btn-primary btn-lg btn-block"><font
-                        face="Arial">Editer un Adhérent</font></a>
+                    <a href="ajouterOeuvre" class="btn btn-primary btn-lg btn-block"><font
+                    face="Arial">Ajouter une oeuvre</font></a>
                 </div>
                 <div class="col-md-6">
-                    <a href="" class="btn btn-primary btn-lg btn-block"><font
-                    face="Arial">Ajouter une oeuvre</font></a>
+                    <a href="listerOeuvre" class="btn btn-primary btn-lg btn-block"><font
+                            face="Arial">Lister les oeuvres</font></a>
                 </div>
             </div>
         </div>

@@ -16,17 +16,21 @@
 <h1 class="text-center"><span style="text-decoration: underline;">Gestion des Oeuvres</span></h1>
 <h2 class="text-center">Formulaire d'ajout d'Oeuvre</h2>
 <div class="container">
-    +<FORM  name='identification' method="post" action="insererOeuvre" onsubmit="return teste()">
-    <div class="form-group">
-        <label for="Titre">Titre de l'oeuvre :</label>
-        <input  name="titre" class="form-control" id="Titre">
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <form  name='identification' method="post" action="insererOeuvre" onsubmit="return teste()">
+                <div class="form-group">
+                    <label for="Titre">Titre de l'oeuvre :</label>
+                    <input  name="titre" class="form-control" id="Titre">
+                </div>
+                <div class="form-group">
+                    <label for="Prix">Prix :</label>
+                    <input name="prix" class="form-control" id="Prix">
+                </div>
+                <button type="submit" class="btn btn-default">Ajouter</button>
+            </form>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="Prix">Prix :</label>
-        <input name="prix" class="form-control" id="Prix">
-    </div>
-    <INPUT type="submit" name="bt"  value="Ajouter" >
-</form>
 </div>
 <jsp:include page="footer.jsp" />
 </body>

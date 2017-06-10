@@ -14,25 +14,26 @@
 <div class="container">
 	<h1 class="text-center">Liste des adhérents</h1>
 
-<div class="jumbotron">
-	<table class="table table-striped">
-		<TR>
-			<TH>Numero</TH>
-			<TH>Nom</TH>
-			<TH>Prénom</TH>
-			<TH>Ville</TH>
-
-		</TR>
-		<c:forEach items="${mesAdherents}" var="item">
-			<tr>
-				<td>${item.idAdherent}</td>
-				<td>${item.nomAdherent}</td>
-				<td>${item.prenomAdherent}</td>
-				<td>${item.villeAdherent}</td>
-			</tr>
-		</c:forEach>
-	</table>
-</div>
+	<div class="jumbotron">
+		<div class="container-fluid">
+			<table class="table table-striped">
+				<TR>
+					<TH>Numero</TH>
+					<TH>Nom</TH>
+					<TH>Prénom</TH>
+					<TH>Ville</TH>
+				</TR>
+				<c:forEach items="${mesAdherents}" var="item">
+					<tr>
+						<td>${item.idAdherent}</td>
+						<td>${item.nomAdherent}</td>
+						<td>${item.prenomAdherent}</td>
+						<td>${item.villeAdherent}</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+	</div>
 </div>
 
 <jsp:include page="footer.jsp" />
