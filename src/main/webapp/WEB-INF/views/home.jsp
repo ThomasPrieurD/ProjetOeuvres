@@ -37,6 +37,7 @@
 				fonctionnalité voulue:</span>
 	</p>--%>
         <div class="container-fluid">
+            <h3>Gestion des Adhérents</h3>
             <div class="row">
 		        <div class="col-md-4">
                     <a href="ajouterAdherent" class="btn btn-primary btn-lg btn-block"><font
@@ -51,6 +52,7 @@
                             face="Arial">Editer un Adhérent</font></a>
                 </div>
             </div>
+            <h3>Gestion des oeuvres</h3>
             <div class="row">
 
                 <div class="col-md-6">

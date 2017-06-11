@@ -35,14 +35,16 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adherents <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="ajouterAdherent">ajouter adherent</a></li>
-                        <li><a href="listerAdherent">lister adherent</a></li>
+                        <li><a href="ajouterAdherent">Ajouter un adherent</a></li>
+                        <li><a href="listerAdherent">Lister adherent</a></li>
+                        <li><a href="">Editer un adherent</a></li>
                     </ul>
                 </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Oeuvres <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="ajouterOeuvre">ajouter Oeuvre</a></li>
+                            <li><a href="ajouterOeuvre">Ajouter Oeuvre</a></li>
+                            <li><a href="listerOeuvre">Lister les Oeuvres</a></li>
                         </ul>
                     </li>
             </ul>
