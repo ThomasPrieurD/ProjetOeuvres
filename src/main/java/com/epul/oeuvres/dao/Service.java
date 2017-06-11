@@ -247,7 +247,19 @@ public class Service {
 		}
 	}
 
-	
-	
 
+	public void deleteAdherent(int idAdherent)  throws MonException {
+		String mysql;
+
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "DELETE FROM adherent WHERE id_adherent = " + idAdherent;
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+		catch (Exception exc) {
+			throw new MonException(exc.getMessage(), "systeme");
+		}
+	}
 }

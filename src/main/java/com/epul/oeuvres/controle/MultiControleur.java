@@ -155,7 +155,7 @@ public class MultiControleur {
 		return new ModelAndView(destinationPage);
 	}
 
-	/*@RequestMapping(value = "supprimerAdherent_{idAdherent}")
+	@RequestMapping(value = "supprimerAdherent/{idAdherent}")
 	public ModelAndView supprimerAdherent(HttpServletRequest request, HttpServletResponse response, @PathVariable("idAdherent") int idAdherent) throws Exception {
 
 		String destinationPage = "";
@@ -169,7 +169,7 @@ public class MultiControleur {
 		}
 
 		return new ModelAndView(destinationPage);
-	}*/
+	}
 
 
 

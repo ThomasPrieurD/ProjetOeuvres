@@ -31,7 +31,7 @@
 						<td>${item.prenomAdherent}</td>
 						<td>${item.villeAdherent}</td>
 						<td><a class="btn btn-success btn-sm" href="editerAdherent/${item.idAdherent}" >Edit</a>
-						<a class="btn btn-danger btn-sm" href="#">Delete</a></td>
+						<a class="btn btn-danger btn-sm" href="supprimerAdherent/${item.idAdherent}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</table>
