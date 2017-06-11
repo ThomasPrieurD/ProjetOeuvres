@@ -109,11 +109,12 @@ public class MultiControleur {
 	@RequestMapping(value = "editerAdherent/{idAdherent}")
 	public ModelAndView editerAdherent(HttpServletRequest request, HttpServletResponse response, @PathVariable("idAdherent") int idAdherent) throws Exception {
 
+		System.out.println("id Adherent : "+idAdherent);
 		String destinationPage = "";
 		try {
 			Service unService = new Service();
 			request.setAttribute("monAdherent", unService.consulterAdherent(idAdherent));
-			destinationPage = "ajouterAdherent";
+			destinationPage = "editerAdherent";
 		} catch (Exception e) {
 			request.setAttribute("MesErreurs", e.getMessage());
 			destinationPage = "Erreur";

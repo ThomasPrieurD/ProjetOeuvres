@@ -22,6 +22,7 @@
 					<TH>Nom</TH>
 					<TH>Prénom</TH>
 					<TH>Ville</TH>
+					<th>Edition</th>
 				</TR>
 				<c:forEach items="${mesAdherents}" var="item">
 					<tr>
@@ -29,6 +30,8 @@
 						<td>${item.nomAdherent}</td>
 						<td>${item.prenomAdherent}</td>
 						<td>${item.villeAdherent}</td>
+						<td><a class="btn btn-success btn-sm" href="editerAdherent/${item.idAdherent}" >Edit</a>
+						<a class="btn btn-danger btn-sm" href="#">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</table>

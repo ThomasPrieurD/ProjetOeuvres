@@ -59,10 +59,10 @@ public class Service {
 	     Map mParam;
 	  try
 	  {
-		String mysql = "select * from adherent where numero_adherent=?";
-		 mParam = new HashMap();
+		 String mysql = "select * from adherent where id_adherent="+numero;
+		 /*mParam = new HashMap();
 	     mParam.put(1, numero);
-	     mParams.put(0, mParam); 
+	     mParams.put(0, mParam);*/
 		List<Adherent> mesAdh = consulterListeAdherents(mysql);
 		if (mesAdh.isEmpty())
 			return null;
