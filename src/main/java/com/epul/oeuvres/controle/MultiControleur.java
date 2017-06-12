@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 //import com.epul.metier.*;
 //import com.epul.meserreurs.*;
@@ -106,11 +107,13 @@ public class MultiControleur {
 		return new ModelAndView(destinationPage);
 	}
 
-	@RequestMapping(value = "editerAdherent/{idAdherent}")
-	public ModelAndView editerAdherent(HttpServletRequest request, HttpServletResponse response, @PathVariable("idAdherent") int idAdherent) throws Exception {
+	@RequestMapping(value = "editerAdherent")
+	public ModelAndView editerAdherent(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+	    int idAdherent=Integer.parseInt(request.getParameter("idAdherent"));
 		System.out.println("id Adherent : "+idAdherent);
 		String destinationPage = "";
+		if(idAdherent==0) return new ModelAndView("redirect:editerAdherent");
 		try {
 			Service unService = new Service();
 			request.setAttribute("monAdherent", unService.consulterAdherent(idAdherent));
@@ -120,6 +123,20 @@ public class MultiControleur {
 			destinationPage = "Erreur";
 		}
 
+		return new ModelAndView(destinationPage);
+	}
+
+	@RequestMapping(value = "edit")
+	public ModelAndView edit(HttpServletRequest request){
+		String destinationPage;
+		try {
+			Service unService = new Service();
+			unService.editAdherent(15,request.getParameter("txtnom"), request.getParameter("txtprenom"), request.getParameter("txtville"));
+			destinationPage="home";
+		} catch (MonException e) {
+			e.printStackTrace();
+			destinationPage="Erreur";
+		}
 		return new ModelAndView(destinationPage);
 	}
 
@@ -155,10 +172,11 @@ public class MultiControleur {
 		return new ModelAndView(destinationPage);
 	}
 
-	@RequestMapping(value = "supprimerAdherent/{idAdherent}")
-	public ModelAndView supprimerAdherent(HttpServletRequest request, HttpServletResponse response, @PathVariable("idAdherent") int idAdherent) throws Exception {
+	@RequestMapping(value = "supprimerAdherent")
+	public ModelAndView supprimerAdherent(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		String destinationPage = "";
+        int idAdherent=Integer.parseInt(request.getParameter("idAdherent"));
+        String destinationPage = "";
 		try {
 			Service unService = new Service();
 			unService.deleteAdherent(idAdherent);

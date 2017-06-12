@@ -19,7 +19,7 @@
     <div class="container">
         <div class="jumbotron">
             <div class="container-fluid">
-                <FORM  name='identification' method="post" action="insererAdherent" onsubmit="return teste()">
+                <FORM  name='identification' method="post" action="edit" onsubmit="return teste()">
                     <div class="form-group">
                         <label for="nom">Nom de l'adherent :</label>
                         <input type="Nom" name="txtnom" class="form-control" id="nom" value=${monAdherent.nomAdherent}>
@@ -32,7 +32,7 @@
                         <label for="ville">Ville de l'adherent :</label>
                         <input type="Ville" name="txtville" class="form-control" id="ville" value=${monAdherent.villeAdherent}>
                     </div>
-                    <button type="submit" class="btn btn-default">Ajouter</button>
+                    <button type="submit" class="btn btn-default">Editer</button>
                 </form>
             </div>
         </div>
