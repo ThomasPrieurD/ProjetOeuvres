@@ -37,7 +37,6 @@
                     <ul class="dropdown-menu">
                         <li><a href="ajouterAdherent">Ajouter un adherent</a></li>
                         <li><a href="listerAdherent">Lister adherent</a></li>
-                        <li><a href="">Editer un adherent</a></li>
                     </ul>
                 </li>
                     <li class="dropdown">

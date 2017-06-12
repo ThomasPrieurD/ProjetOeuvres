@@ -28,6 +28,7 @@
                     <TH>Etat</TH>
                     <TH>Prix</TH>
                     <TH>Titre</TH>
+                    <th>Edition</th>
                 </TR>
                 <c:forEach items="${mesOeuvres}" var="item">
                     <tr>
@@ -35,6 +36,8 @@
                         <td>${item.etatOeuvrevente}</td>
                         <td>${item.prixOeuvrevente}</td>
                         <td>${item.titreOeuvrevente}</td>
+                        <td><a class="btn btn-success btn-sm" href="editerOeuvre?idOeuvre=${item.idOeuvrevente}" >Edit</a>
+                            <a class="btn btn-danger btn-sm" href="supprimerOeuvre?idOeuvre=${item.idOeuvrevente}">Delete</a></td>
                     </tr>
                 </c:forEach>
             </table>

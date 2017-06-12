@@ -19,7 +19,7 @@
     <div class="container">
         <div class="jumbotron">
             <div class="container-fluid">
-                <FORM  name='identification' method="post" action="edit" onsubmit="return teste()">
+                <FORM  name='identification' method="post" action="edit?idAdherent=${monAdherent.idAdherent}" onsubmit="return teste()">
                     <div class="form-group">
                         <label for="nom">Nom de l'adherent :</label>
                         <input type="Nom" name="txtnom" class="form-control" id="nom" value=${monAdherent.nomAdherent}>

@@ -189,6 +189,53 @@ public class MultiControleur {
 		return new ModelAndView(destinationPage);
 	}
 
+    @RequestMapping(value = "supprimerOeuvre")
+    public ModelAndView supprimerOeuvre(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        int idOeuvre=Integer.parseInt(request.getParameter("idOeuvre"));
+        String destinationPage = "";
+        try {
+            Service unService = new Service();
+            unService.deleteOeuvre(idOeuvre);
+            destinationPage = "home";
+        } catch (Exception e) {
+            request.setAttribute("MesErreurs", e.getMessage());
+            destinationPage = "Erreur";
+        }
+
+        return new ModelAndView(destinationPage);
+    }
+
+    @RequestMapping(value = "editerOeuvre")
+    public ModelAndView editerOeuvre(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        int idOeuvre=Integer.parseInt(request.getParameter("idOeuvre"));
+        String destinationPage = "";
+        try {
+            Service unService = new Service();
+            request.setAttribute("monAdherent", unService.consulterOeuvre(idOeuvre));
+            destinationPage = "editerOeuvre";
+        } catch (Exception e) {
+            request.setAttribute("MesErreurs", e.getMessage());
+            destinationPage = "Erreur";
+        }
+
+        return new ModelAndView(destinationPage);
+    }
+
+    @RequestMapping(value = "editOeuvre")
+    public ModelAndView editOeuvre(HttpServletRequest request){
+        String destinationPage;
+        try {
+            Service unService = new Service();
+            unService.editOeuvre(Integer.parseInt(request.getParameter("idAdherent")),request.getParameter("txtnom"), Float.parseFloat(request.getParameter("txtprenom")), request.getParameter("txtville"));
+            destinationPage="home";
+        } catch (MonException e) {
+            e.printStackTrace();
+            destinationPage="Erreur";
+        }
+        return new ModelAndView(destinationPage);
+    }
 
 
 	// /

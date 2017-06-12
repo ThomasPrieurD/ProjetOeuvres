@@ -262,4 +262,61 @@ public class Service {
 			throw new MonException(exc.getMessage(), "systeme");
 		}
 	}
+
+	public void editOeuvre(int i, String txtnom, float txtprenom, String txtville) throws MonException {
+		String mysql;
+
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "UPDATE oeuvrevente " +
+					"SET titre_oeuvrevente = '"+txtville+"' , "+
+					"prix_oeuvrevente = '"+txtprenom+"' ,"+
+					"etat_oeuvrevente ='"+txtnom+
+					"' WHERE id_oeuvrevente=" + i;
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+		catch (Exception exc) {
+			throw new MonException(exc.getMessage(), "systeme");
+		}
+	}
+
+	public Object consulterOeuvre(int numero) throws MonException {
+
+		Map mParams = new HashMap();
+		Map mParam;
+		try
+		{
+			String mysql = "select * from oeuvrevente where id_oeuvrevente="+numero;
+		 /*mParam = new HashMap();
+	     mParam.put(1, numero);
+	     mParams.put(0, mParam);*/
+			List<Oeuvrevente> mesAdh = consulterListeOeuvres(mysql);
+			if (mesAdh.isEmpty())
+				return null;
+			else {
+				return mesAdh.get(0);
+			}
+		} catch (MonException e)
+		{
+			throw e;
+		}
+	}
+
+	public void deleteOeuvre(int idAdherent)  throws MonException {
+		String mysql;
+
+		DialogueBd unDialogueBd = DialogueBd.getInstance();
+		try {
+			mysql = "DELETE FROM oeuvrevente WHERE id_oeuvrevente = " + idAdherent;
+			unDialogueBd.insertionBD(mysql);
+		} catch (MonException e) {
+			throw e;
+		}
+		catch (Exception exc) {
+			throw new MonException(exc.getMessage(), "systeme");
+		}
+	}
 }
+

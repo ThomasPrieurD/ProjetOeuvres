@@ -39,17 +39,13 @@
         <div class="container-fluid">
             <h3>Gestion des Adhérents</h3>
             <div class="row">
-		        <div class="col-md-4">
+		        <div class="col-md-6">
                     <a href="ajouterAdherent" class="btn btn-primary btn-lg btn-block"><font
 				    face="Arial">Ajouter un Adhérent</font></a>
                 </div>
-		        <div class="col-md-4">
+		        <div class="col-md-6">
                     <a href="listerAdherent" class="btn btn-primary btn-lg btn-block"><font
 				    face="Arial">lister les adhérents</font></a><font face="Arial"> </font>
-                </div>
-                <div class="col-md-4">
-                    <a href="" class="btn btn-primary btn-lg btn-block"><font
-                            face="Arial">Editer un Adhérent</font></a>
                 </div>
             </div>
             <h3>Gestion des oeuvres</h3>
@@ -65,14 +61,6 @@
                 </div>
             </div>
         </div>
-		<%--<ul>
-		<li><a href="ajouterAdherent"><font
-				face="Arial">Ajout Adhérent</font></a></li>
-		<li><a href="listerAdherent"><font
-				face="Arial">lister les adhérents</font></a><font face="Arial"> </font></li>
-		<li><a href="javascript:fermer()"><font face="Arial">Quitter</font></a><font
-			face="Arial"> </font></li>
-	</ul>--%>
     </div>
 </div>
 
