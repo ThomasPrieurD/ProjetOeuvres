@@ -131,7 +131,7 @@ public class MultiControleur {
 		String destinationPage;
 		try {
 			Service unService = new Service();
-			unService.editAdherent(15,request.getParameter("txtnom"), request.getParameter("txtprenom"), request.getParameter("txtville"));
+			unService.editAdherent(Integer.parseInt(request.getParameter("idAdherent")),request.getParameter("txtnom"), request.getParameter("txtprenom"), request.getParameter("txtville"));
 			destinationPage="home";
 		} catch (MonException e) {
 			e.printStackTrace();

@@ -45,10 +45,10 @@
                 </div>
 		        <div class="col-md-6">
                     <a href="listerAdherent" class="btn btn-primary btn-lg btn-block"><font
-				    face="Arial">lister les adhérents</font></a><font face="Arial"> </font>
+				    face="Arial">Lister les adhérents</font></a><font face="Arial"> </font>
                 </div>
             </div>
-            <h3>Gestion des oeuvres</h3>
+            <h3>Gestion des oeuvres</h3>a
             <div class="row">
 
                 <div class="col-md-6">
